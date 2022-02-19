@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
 
-const ExpenseForm = ({ onSaveExpenseData }) => {
+const ExpenseForm = ({ onSaveExpenseData, handleAddExpensesBtnClick }) => {
 	const [inputValue, setInputValue] = useState({
 		enteredTitle: "",
 		enteredDate: "",
@@ -61,8 +61,8 @@ const ExpenseForm = ({ onSaveExpenseData }) => {
 					<label>Date</label>
 					<input
 						type="date"
-						min="2022-02-19"
-						max="2023-12-31"
+						min="2019-02-19"
+						max="2025-12-31"
 						name="enteredDate"
 						onChange={handleInputChange}
 						value={inputValue.enteredDate}
@@ -70,6 +70,9 @@ const ExpenseForm = ({ onSaveExpenseData }) => {
 				</div>
 			</div>
 			<div className="new-expense__actions">
+				<button type="button" onClick={handleAddExpensesBtnClick}>
+					Cancel
+				</button>
 				<button type="submit">Add Expense</button>
 			</div>
 		</form>
